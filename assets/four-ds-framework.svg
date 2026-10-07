@@ -1,0 +1,103 @@
+<svg viewBox="0 0 1160 760" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1160" height="760" fill="#0f1419"/>
+
+  <text x="580" y="42" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">The Four D's — A Working Mental Model for AI PM</text>
+  <text x="580" y="70" fill="#7fd1c4" font-size="15" font-style="italic" text-anchor="middle">Traditional PM delivers a product. AI PM delivers a product that learns.</text>
+
+  <text x="40" y="110" fill="#9aa7b4" font-size="13" font-weight="700" letter-spacing="1">LAYER 1 · THE PROCESS — how you work</text>
+
+  <rect x="40" y="124" width="255" height="150" rx="10" fill="#15202b" stroke="#4a9eff" stroke-width="2"/>
+  <rect x="40" y="124" width="255" height="40" rx="10" fill="#4a9eff"/>
+  <text x="167" y="151" fill="#0f1419" font-size="18" font-weight="700" text-anchor="middle">1 · DISCOVER</text>
+  <text x="58" y="188" fill="#e8eef4" font-size="12">• User problem worth solving</text>
+  <text x="58" y="214" fill="#ffd27f" font-size="12" font-weight="600">+ Signal check</text>
+  <text x="58" y="232" fill="#b8c4d0" font-size="11">  Is there a learnable signal</text>
+  <text x="58" y="248" fill="#b8c4d0" font-size="11">  in the data?</text>
+  <text x="58" y="268" fill="#8fb8e8" font-size="10" font-style="italic">  Many ideas should die here.</text>
+
+  <rect x="310" y="124" width="255" height="150" rx="10" fill="#15202b" stroke="#f0a05a" stroke-width="2"/>
+  <rect x="310" y="124" width="255" height="40" rx="10" fill="#f0a05a"/>
+  <text x="437" y="151" fill="#0f1419" font-size="18" font-weight="700" text-anchor="middle">2 · DEFINE</text>
+  <text x="328" y="188" fill="#e8eef4" font-size="12">• Spec + acceptance criteria</text>
+  <text x="328" y="214" fill="#ffd27f" font-size="12" font-weight="600">+ Ground truth</text>
+  <text x="328" y="230" fill="#b8c4d0" font-size="11">  labeled data defines "correct"</text>
+  <text x="328" y="254" fill="#ffd27f" font-size="12" font-weight="600">+ De-risk</text>
+  <text x="328" y="270" fill="#b8c4d0" font-size="11">  baseline · metric · "good enough"</text>
+
+  <rect x="580" y="124" width="255" height="150" rx="10" fill="#15202b" stroke="#5ad17f" stroke-width="2"/>
+  <rect x="580" y="124" width="255" height="40" rx="10" fill="#5ad17f"/>
+  <text x="707" y="151" fill="#0f1419" font-size="18" font-weight="700" text-anchor="middle">3 · DELIVER</text>
+  <text x="598" y="188" fill="#e8eef4" font-size="12">• Build · test · launch</text>
+  <text x="598" y="214" fill="#ffd27f" font-size="12" font-weight="600">+ Guardrails</text>
+  <text x="598" y="230" fill="#b8c4d0" font-size="11">  thresholds · human-in-loop</text>
+  <text x="598" y="254" fill="#ffd27f" font-size="12" font-weight="600">+ Monitor</text>
+  <text x="598" y="270" fill="#b8c4d0" font-size="11">  drift detection · tracing</text>
+
+  <rect x="850" y="124" width="270" height="150" rx="10" fill="#1a2a2a" stroke="#2ee6c4" stroke-width="3"/>
+  <rect x="850" y="124" width="270" height="40" rx="10" fill="#2ee6c4"/>
+  <text x="985" y="151" fill="#0f1419" font-size="18" font-weight="700" text-anchor="middle">4 · DEEPEN ★</text>
+  <text x="868" y="186" fill="#e8eef4" font-size="12">The feedback loop:</text>
+  <text x="868" y="204" fill="#b8c4d0" font-size="11">  predict → correct → relabel</text>
+  <text x="868" y="220" fill="#b8c4d0" font-size="11">  → retrain → measure → repeat</text>
+  <text x="868" y="246" fill="#ffd27f" font-size="12" font-weight="600">  v1 .78 → v2 .86 → v3 .90</text>
+  <text x="868" y="268" fill="#8fe8dc" font-size="10" font-style="italic">  Gets better from use.</text>
+
+  <g stroke="#5a6b7a" stroke-width="3" fill="none">
+    <path d="M 295 199 L 308 199" marker-end="url(#arr)"/>
+    <path d="M 565 199 L 578 199" marker-end="url(#arr)"/>
+    <path d="M 835 199 L 848 199" marker-end="url(#arr)"/>
+  </g>
+  <path d="M 985 276 L 985 300 L 437 300 L 437 276" stroke="#2ee6c4" stroke-width="2.5" fill="none" stroke-dasharray="7,5" marker-end="url(#arrg)"/>
+  <text x="711" y="294" fill="#2ee6c4" font-size="12" text-anchor="middle" font-style="italic">corrections become new ground truth</text>
+
+  <text x="40" y="348" fill="#9aa7b4" font-size="13" font-weight="700" letter-spacing="1">LAYER 2 · THE TECHNICAL STACK — what you understand (PM-literacy level)</text>
+
+  <rect x="40"   y="362" width="148" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="114" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Data &amp; Ingest</text>
+  <text x="114" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">clean · normalize</text>
+  <rect x="196"  y="362" width="148" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="270" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Represent</text>
+  <text x="270" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">embeddings</text>
+  <rect x="352"  y="362" width="148" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="426" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Index / Cluster</text>
+  <text x="426" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">search · group</text>
+  <rect x="508"  y="362" width="148" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="582" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Detect / Classify</text>
+  <text x="582" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">precision vs recall</text>
+  <rect x="664"  y="362" width="148" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="738" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Retrieve / Reason</text>
+  <text x="738" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">RAG · grounding</text>
+  <rect x="820"  y="362" width="140" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="890" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Decide / Act</text>
+  <text x="890" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">guardrails</text>
+  <rect x="968"  y="362" width="152" height="56" rx="8" fill="#1b2630" stroke="#3a4a5a"/>
+  <text x="1044" y="386" fill="#e8eef4" font-size="12" font-weight="600" text-anchor="middle">Evaluate / Monitor</text>
+  <text x="1044" y="404" fill="#8fb8e8" font-size="9" text-anchor="middle">F1 · drift · loop</text>
+  <g stroke="#4a5a6a" stroke-width="2" fill="none">
+    <path d="M 188 390 L 195 390"/><path d="M 344 390 L 351 390"/>
+    <path d="M 500 390 L 507 390"/><path d="M 656 390 L 663 390"/>
+    <path d="M 812 390 L 819 390"/><path d="M 960 390 L 967 390"/>
+  </g>
+  <text x="40" y="446" fill="#8fe8dc" font-size="11" font-style="italic">Key literacy: embeddings turn meaning into math · precision/recall is a product decision · clustering is discovery not truth · the LLM is the last &amp; smallest step.</text>
+
+  <text x="40" y="490" fill="#9aa7b4" font-size="13" font-weight="700" letter-spacing="1">LAYER 3 · CROSS-CUTTING CONCERNS — true at every stage</text>
+  <rect x="40" y="502" width="1080" height="54" rx="8" fill="#141f1b" stroke="#2e6b5a" stroke-width="1.5"/>
+  <text x="60"  y="535" fill="#7fe8c4" font-size="13" font-weight="600">Privacy</text>
+  <text x="200" y="535" fill="#7fe8c4" font-size="13" font-weight="600">Human-in-the-loop</text>
+  <text x="430" y="535" fill="#7fe8c4" font-size="13" font-weight="600">Cost / Latency</text>
+  <text x="630" y="535" fill="#7fe8c4" font-size="13" font-weight="600">Observability</text>
+  <text x="830" y="535" fill="#7fe8c4" font-size="13" font-weight="600">Honesty about limits</text>
+
+  <rect x="40" y="580" width="1080" height="78" rx="10" fill="#15202b" stroke="#3a4a5a"/>
+  <text x="60" y="608" fill="#ffffff" font-size="14" font-weight="700">How the layers connect — the insight most frameworks miss:</text>
+  <text x="60" y="632" fill="#b8c4d0" font-size="12.5">Each process stage calls on specific parts of the stack. DEFINE leans on Represent + Evaluate. DELIVER leans on Decide/Act.</text>
+  <text x="60" y="650" fill="#b8c4d0" font-size="12.5">DEEPEN leans on Evaluate + Human-in-the-loop. The process tells you WHEN each piece of technical knowledge becomes a decision you own.</text>
+
+  <text x="580" y="700" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Traditional PM asks: did we build the right thing, and does it work?</text>
+  <text x="580" y="726" fill="#2ee6c4" font-size="17" font-weight="700" text-anchor="middle">AI PM asks one more question that never stops: is it still getting better?</text>
+
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5a6b7a"/></marker>
+    <marker id="arrg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2ee6c4"/></marker>
+  </defs>
+</svg>
