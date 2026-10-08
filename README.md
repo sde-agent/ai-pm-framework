@@ -4,6 +4,12 @@
 
 ![The Four D's Framework](assets/four-ds-framework.png)
 
+## New: the AI PM field guide
+
+Start with [The AI PM Field Guide](docs/AI-PM-FIELD-GUIDE.md): a practical evidence-to-action mental model spanning problem/risk, perception/evidence, decision/policy, action/agency, and evaluation/feedback. Grounded in ProductSignal, it extends the Four D’s process with architecture and flow diagrams, asymmetric-risk decisions, implementation tradeoffs, and honest evaluation boundaries.
+
+Use the [PRD and system-design templates](docs/TEMPLATES.md) and [evaluation and trace playbook](docs/EVALUATION-PLAYBOOK.md) to apply it. The original framework and diagram remain below; the field guide explains where their broad claims need qualification.
+
 ---
 
 Every PM knows the classic shape of the job: **Discover** the problem, **Define** the solution, **Deliver** it. That muscle still works for AI products. AI doesn't throw it out — it adds a wrinkle inside each step, and then adds one brand-new step at the end.
