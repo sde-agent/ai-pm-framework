@@ -4,6 +4,12 @@
 
 ![The Four D's Framework](assets/four-ds-framework.png)
 
+## New: the AI PM field guide
+
+Start with [The AI PM Field Guide](docs/AI-PM-FIELD-GUIDE.md), organized around **Discover → Define → Deliver → Deepen**. Each stage explains the PM’s decisions, questions to investigate with ML/DS and engineering, and evidence to request. ProductSignal examples show how risk, evidence, policy, authority and feedback inform those decisions.
+
+Use the [planning templates](docs/TEMPLATES.md) to structure collaboration and the [evaluation playbook](docs/EVALUATION-PLAYBOOK.md) to interpret technical evidence. Specialist implementation responsibilities are explicit throughout. The original framework and diagram remain below; the field guide qualifies their broader claims about learning and confidence.
+
 ---
 
 Every PM knows the classic shape of the job: **Discover** the problem, **Define** the solution, **Deliver** it. That muscle still works for AI products. AI doesn't throw it out — it adds a wrinkle inside each step, and then adds one brand-new step at the end.
