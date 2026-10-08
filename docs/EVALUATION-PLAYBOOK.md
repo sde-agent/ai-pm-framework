@@ -1,16 +1,29 @@
-# Evaluation, failure modes and trace playbook
+# Evaluation playbook: questions PMs ask and evidence teams provide
 
 Companion to [the field guide](AI-PM-FIELD-GUIDE.md) and [planning templates](TEMPLATES.md).
 
-## 1. Establish a reference you can defend
+## How to use this as a PM
 
-Define the unit: report, observed behavior, problem, incident, claim or action. These are not interchangeable. Annotate behavior and ambiguity separately from severity and usefulness. Use independent annotation on a subset, record agreement by category, and adjudicate disagreements with a versioned rubric. Keep unresolved cases explicitly ambiguous rather than forcing clean labels.
+This is a discussion and evidence-review reference, not a list of engineering tasks assigned to the PM. ML/DS design and run evaluations, calibrate judges and diagnose model errors. Engineering implements instrumentation, permissions and operational controls. Domain reviewers contribute reference judgments. The PM defines usefulness and error priorities, agrees on acceptance criteria with those partners, and decides what the evidence justifies.
 
-Partition development and reserved evaluation by incident, customer or wording family where appropriate; random report splits may leak near-duplicate templates. Keep a temporal holdout for change over time. Freeze the test set and thresholds before evaluation. Repeatedly tuning on hidden labels still makes that dataset development data.
+| Four D’s | Questions to ask | Evidence to request | Decision you own |
+|---|---|---|---|
+| Discover | Is there signal? What does this dataset represent? | Samples, baseline and limitations | Whether the capability is worth pursuing |
+| Define | Do these metrics reflect our costly mistakes? | Denominators, slices and worked examples | Meaning of good and acceptable tradeoffs |
+| Deliver | How does it perform on fresh cases and in the full workflow? | Reserved results, user reviews and control demonstrations | Pilot readiness and permitted authority |
+| Deepen | What failed, why, and did the fix help? | Trace walkthroughs, feedback and version comparisons | Next improvement and rollout scope |
+
+The sections below describe evidence to request or approaches to discuss with the responsible specialists. You do not need to implement them. Start with the question relevant to your current product decision.
+
+## 1. Ask how the reference judgments were established
+
+Ask ML/DS to define the evaluation unit: report, observed behavior, problem, incident, claim or action. These are not interchangeable. Annotate behavior and ambiguity separately from severity and usefulness. Use independent annotation on a subset, record agreement by category, and adjudicate disagreements with a versioned rubric. Keep unresolved cases explicitly ambiguous rather than forcing clean labels.
+
+Ask ML/DS how they partition development and reserved evaluation by incident, customer or wording family where appropriate; random report splits may leak near-duplicate templates. Keep a temporal holdout for change over time. Freeze the test set and thresholds before evaluation. Repeatedly tuning on hidden labels still makes that dataset development data.
 
 Synthetic sets should deliberately cover confusing pairs, rare behaviors, multiple issues per report, negation, recovery, contradictory reports and insufficient context. Record generator seed and version. They establish controlled failure behavior, not population prevalence or business impact.
 
-## 2. Stage metrics and denominators
+## 2. Ask what each metric measures and misses
 
 | Stage | Measure | Definition / interpretation | Trace needed |
 |---|---|---|---|
@@ -35,9 +48,9 @@ Synthetic sets should deliberately cover confusing pairs, rare behaviors, multip
 
 A small issue can have partial report coverage yet qualify as discovered. Specify both report recall and behavior discovery recall. Fragmentation is not automatically harmless: it can dilute growth estimates and increase review. The ProductSignal priority tolerates it relative to over-merging, not without limit.
 
-## 3. Temporal replay and outcome claims
+## 3. Ask what the timing comparison actually proves
 
-Replay using only information available at each checkpoint. Index and retrieval state must respect that time, including document updates. Reference incident labels and comparison recognition times remain evaluator-only. Record first-report time, evidence-threshold time, first candidate time, first human-judged useful presentation, investigation time and resolution time separately.
+Ask the team to demonstrate that replay uses only information available at each checkpoint. Index and retrieval state must respect that time, including document updates. Reference incident labels and comparison recognition times remain evaluator-only. Record first-report time, evidence-threshold time, first candidate time, first human-judged useful presentation, investigation time and resolution time separately.
 
 For each incident, compare against a measured existing-process recognition time if available. If the comparison is invented, call the result simulated lead and run sensitivity checks over plausible comparison times. If the system never surfaces the incident, record a miss rather than calculating lead only on successes. Report checkpoint granularity and right-censoring when the observation window ends.
 
@@ -45,7 +58,7 @@ ProductSignal’s conversation reported simulated leads of 44 hours for checkout
 
 For real validation, ask blinded reviewers whether the card identifies a specific actionable problem. Define “useful” before review. Compare time to useful recognition and total review effort with the existing workflow, using comparable incident populations. Account for easier-case selection, reviewer learning, incident prevalence and concurrent tooling changes. Detection does not establish faster fixes.
 
-## 4. Minimum failure suite
+## 4. Agree which failures the team must demonstrate
 
 | Test case | Expected system behavior | Failure exposed |
 |---|---|---|
@@ -65,7 +78,9 @@ For real validation, ask blinded reviewers whether the card identifies a specifi
 
 These are proposed regression cases, not claims that the repository already passes them. Add actual incidents and changed outcomes over time. Keep high-risk failures visible even when aggregate metrics improve.
 
-## 5. Judge calibration procedure
+## 5. Ask ML/DS how they validated the judge
+
+Request a summary of ML/DS’s procedure covering the following points:
 
 1. Define the property: factual support, policy fidelity, usefulness or identity match. Avoid a vague “quality” score.
 2. Build a human-reference set covering ordinary, ambiguous and high-cost cases. Independently label a subset and adjudicate disagreement.
@@ -77,9 +92,9 @@ These are proposed regression cases, not claims that the repository already pass
 
 If humans disagree on severity, resolve the policy before calling the model inaccurate. In ProductSignal, cases changed the rubric during development. Agreement across changing rubrics is not a clean model comparison. A model's 9/12 development agreement is neither calibrated confidence nor held-out reliability.
 
-## 6. A reconstructable trace
+## 6. Ask engineering to walk through a reconstructable trace
 
-Below is an illustrative schema, not a recorded ProductSignal trace. Store sensitive content under access control; logs should not become an unrestricted second data store.
+You should be able to follow the evidence and decision in a trace walkthrough; engineering owns the schema and instrumentation. Below is an illustrative schema, not a recorded ProductSignal trace. Store sensitive content under access control; logs should not become an unrestricted second data store.
 
 ```json
 {
@@ -129,7 +144,7 @@ Also capture retrieval query/filter/rank and context selection when present; act
 
 Trace a failure backward: Was the action permitted? Did policy map facts correctly? Were facts supported? Was necessary evidence selected? Was it retrieved or grouped? Was it ingested accurately? Then change the responsible stage and rerun the relevant regression suite.
 
-## 7. Release and feedback gates
+## 7. Decide release scope and improvement priorities
 
 | Gate | Required evidence | Stop or reduce scope when |
 |---|---|---|

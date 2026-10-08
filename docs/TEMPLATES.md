@@ -1,6 +1,19 @@
-# AI PM planning templates
+# AI PM planning templates for the Four D’s
 
 Use these with [the field guide](AI-PM-FIELD-GUIDE.md) and [evaluation playbook](EVALUATION-PLAYBOOK.md). Replace placeholders with decisions or explicit Unknowns. A template is complete when the team can test it, not when every field sounds confident.
+
+## Responsibility and stage map
+
+The PM leads the PRD’s user problem, useful behavior, error priorities, authority and success criteria. ML/DS contribute feasibility evidence, metric design and evaluation results. Design and engineering contribute workflow, architecture, controls and operational plans. Agree shared decisions together.
+
+| Four D’s | Template sections | PM contribution | Counterpart contribution |
+|---|---|---|---|
+| Discover | PRD 1–2, preliminary 3 | Outcome, workflow, risk priorities | Data and capability feasibility |
+| Define | PRD 3–6 | Useful evidence, policy, experience, acceptance | Test plan and technical recommendations |
+| Deliver | PRD 5–7, system-design review | Readiness, pilot scope, permitted actions | Built workflow, quality evidence and controls |
+| Deepen | PRD 6–7 revisited | Improvement priorities and rollout decisions | Diagnosis, changes and measured outcomes |
+
+The system-design template is led by engineering and ML/DS. Use it to ask questions and review product implications; completing every technical field is not the PM’s job.
 
 ## PRD: an evidence-to-action product
 
@@ -76,15 +89,15 @@ Freeze criteria before final reserved evaluation. Record data provenance, slices
 - Corrections: [Structured reason, adjudication, privacy, release review]
 - Phase stopping rule: [Question answered and decision enabled]
 
-## System design: contracts at each boundary
+## System-design discussion: questions for engineering and ML/DS
 
-### 1. Capability and constraints
+### 1. PM input: capability and product constraints
 
 Document required distinctions, scale, languages, hardware, privacy, latency budget, cost budget, availability and maximum authority. Compare at least one simpler baseline. Explain why each AI component is necessary.
 
-### 2. Component contract
+### 2. Counterpart output: component contracts to review
 
-Repeat this table for ingest, representation, grouping, identity, retrieval, extraction, synthesis, policy, action and evaluation. Omit components the product does not need.
+Ask technical leads to describe relevant boundaries using this table for ingest, representation, grouping, identity, retrieval, extraction, synthesis, policy, action and evaluation. Omit components the product does not need.
 
 | Field | Specification |
 |---|---|
@@ -109,14 +122,14 @@ Repeat this table for ingest, representation, grouping, identity, retrieval, ext
 | Policy → action | Permitted action, reason, exact payload, approval where required | Deny unsupported authority; record rejection |
 | Feedback → evaluation | Correction type, reason, reviewer, prior version | Adjudicate before changing reference data |
 
-### 4. Decision records and alternatives
+### 4. Shared decisions: recommendation and product tradeoffs
 
 For each significant choice, write: context; options; evidence; chosen tradeoff; remaining risk; test that could reverse the choice. Example: embedding/clustering may discover novelty, but rules may be sufficient for known failures. Compare both at equal review budgets before selecting the more complex system.
 
-### 5. Operational plan
+### 5. Engineering output: operational plan to review
 
-Specify persistence, cache invalidation, index rebuilds, access deletion, retention, rate limits, queue backpressure, stage timeouts, tool idempotency and rollback. Explain what happens when inference is unavailable or evidence changes during approval. Include a kill switch for external actions and a way to continue manual review.
+Ask engineering to explain persistence, cache invalidation, index rebuilds, access deletion, retention, rate limits, queue backpressure, stage timeouts, tool idempotency and rollback. Explain what happens when inference is unavailable or evidence changes during approval. Include a kill switch for external actions and a way to continue manual review.
 
-### 6. Design-review acceptance
+### 6. PM review: evidence needed for a product decision
 
 The reviewer should be able to follow one report through every stage, reconstruct one failure, see why an action was allowed, and identify who handles an unresolved case. Attach one good trace, one ambiguous trace, one high-risk failure, and the reserved evaluation summary. A polished architecture diagram alone is insufficient.

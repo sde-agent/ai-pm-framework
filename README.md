@@ -6,9 +6,9 @@
 
 ## New: the AI PM field guide
 
-Start with [The AI PM Field Guide](docs/AI-PM-FIELD-GUIDE.md): a practical evidence-to-action mental model spanning problem/risk, perception/evidence, decision/policy, action/agency, and evaluation/feedback. Grounded in ProductSignal, it extends the Four D’s process with architecture and flow diagrams, asymmetric-risk decisions, implementation tradeoffs, and honest evaluation boundaries.
+Start with [The AI PM Field Guide](docs/AI-PM-FIELD-GUIDE.md), organized around **Discover → Define → Deliver → Deepen**. Each stage explains the PM’s decisions, questions to investigate with ML/DS and engineering, and evidence to request. ProductSignal examples show how risk, evidence, policy, authority and feedback inform those decisions.
 
-Use the [PRD and system-design templates](docs/TEMPLATES.md) and [evaluation and trace playbook](docs/EVALUATION-PLAYBOOK.md) to apply it. The original framework and diagram remain below; the field guide explains where their broad claims need qualification.
+Use the [planning templates](docs/TEMPLATES.md) to structure collaboration and the [evaluation playbook](docs/EVALUATION-PLAYBOOK.md) to interpret technical evidence. Specialist implementation responsibilities are explicit throughout. The original framework and diagram remain below; the field guide qualifies their broader claims about learning and confidence.
 
 ---
 
